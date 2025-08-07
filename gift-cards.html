@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazon Clone - Gift Cards</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color:#bfd3d9;
+    }
+
+    .gift-cards-section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .gift-cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .gift-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .gift-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gift-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .gift-card-content {
+      padding: 15px;
+    }
+
+    .gift-card-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .gift-card-desc {
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .section-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gift-cards-section">
+    <div class="section-title">🔥 Explore Gift Cards..!</div>
+    <div class="gift-cards-container">
+      <div class="gift-card">
+        <img src="https://m.media-amazon.com/images/G/02/gc/designs/livepreview/xmasprsnt_clr_noto_email_anim_v2016_uk-main._CB544020553_.png" alt="Amazon eGift Card">
+        <div class="gift-card-content">
+          <div class="gift-card-title">Amazon eGift Card</div>
+          <div class="gift-card-desc">Send instantly via email or SMS</div>
+        </div>
+      </div>
+      <div class="gift-card">
+        <img src="https://i.etsystatic.com/39123838/r/il/af56f6/5772125136/il_1140xN.5772125136_9k2u.jpg" alt="Birthday Card">
+        <div class="gift-card-content">
+          <div class="gift-card-title">Birthday Gift Card</div>
+          <div class="gift-card-desc">Make birthdays special with Amazon gift cards</div>
+        </div>
+      </div>
+      <div class="gift-card">
+        <img src="https://png.pngtree.com/thumb_back/fw800/background/20231102/pngtree-festive-air-travel-passports-toy-plane-and-santa-hat-on-black-image_13757872.png" alt="Festive Card">
+        <div class="gift-card-content">
+          <div class="gift-card-title">Festive Gift Card</div>
+          <div class="gift-card-desc">Celebrate every festival with style</div>
+        </div>
+      </div>
+      <div class="gift-card">
+        <img src="https://i.pinimg.com/736x/40/e1/ca/40e1ca3150b00951cd0b0fe459c26998.jpg" alt="Thank You Card">
+        <div class="gift-card-content">
+          <div class="gift-card-title">Thank You Card</div>
+          <div class="gift-card-desc">A perfect way to say thanks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

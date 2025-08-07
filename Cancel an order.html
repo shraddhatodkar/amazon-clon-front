@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cancel Order</title>
+  <script>
+    function data() {
+      var select = document.getElementById("n1").value;
+      var comment = document.getElementById("n2").value;
+
+      if (select === "" || comment.trim() === "") {
+        alert("Please fill out both fields!");
+        return false;
+      }
+
+      alert("Order cancellation submitted successfully!");
+      return true;
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #bfd3d9;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .modal-box {
+      background: linear-gradient(to left bottom, deeppink, pink);
+      border-radius: 10px;
+      padding: 20px 25px;
+      width: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      height: 400px;
+    }
+
+    .modal-box h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #555;
+      margin: 5px 0 15px;
+    }
+
+    label {
+      font-size: 14px;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    textarea {
+      height: 80px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cancel {
+      background-color: white;
+      border: 1px solid #ccc;
+    }
+
+    .submit {
+      background-color: #003f88;
+      color: white;
+    }
+
+    .submit:hover {
+      background-color: wheat;
+      color: black;
+    }
+
+    .container img{
+      width: 100px;
+      height: 80px;
+      animation-name:pqr;
+      animation-duration:4s;
+      margin-left:100%;
+    }
+    @keyframes pqr{
+      from{
+        margin-right:500%;
+      }
+      to{
+        margin-left: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="modal">
+    <form name="f1" onsubmit="return data()">
+      <div class="modal-box">
+        <h2>Cancel Order</h2>
+        <p class="subtitle">Your request will be solved in 48 hours</p>
+
+        <label for="n1">Choose a Reason for Order Cancellation</label>
+        <select id="n1">
+          <option value="">---- Select a Reason ----</option>
+          <option>Delivery takes too long 🥲</option>
+          <option>Found a better price 🙃</option>
+          <option>Ordered by mistake 😮</option>
+          <option>Order changed by mistake 😐</option>
+          <option>Due to financial reason 😟</option>
+          <option>Other 🙃</option>
+        </select>
+
+        <div class="container">
+          <img src="https://static.vecteezy.com/system/resources/previews/017/591/211/original/courier-truck-icon-outline-illustration-vector.jpg">
+        </div>
+        <label for="n2">Leave a Comment</label>
+        <textarea id="n2" placeholder="Type your comment here..."></textarea>
+
+        <div class="btn-group">
+          <button class="btn cancel" type="button">Cancel</button>
+          <button class="btn submit" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

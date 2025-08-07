@@ -11,6 +11,30 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.nav-signin a{
+    text-decoration: none;
+    color: white;
+}
+.nav-signin a:hover{
+    text-decoration:underline;
+    color: blue;
+}
+.nav-return a{
+    text-decoration: none;
+    color: white;
+}
+.nav-return a:hover{
+    text-decoration:underline;
+    color:blue;
+}
+.nav-card a{
+    text-decoration: none;
+    color: white;
+}
+.nav-card a:hover{
+    text-decoration:underline;
+    color: blue;
+}
 .nav-logo{
     height: 50px;
     width: 100px;
@@ -118,6 +142,15 @@
     font-weight: 700;
     white-space: nowrap;
 }
+.pannel a{
+    color: white;
+    text-decoration: none;
+}
+.pannel a:hover{
+    color: goldenrod;
+    text-decoration: underline;
+}
+/* hero section */
 .hero-section{
     background-image:url("hero_image.jpg");
     background-size: cover;
@@ -244,4 +277,23 @@
     color: white;
     text-decoration: none;
 }
+.pannel-ops a {
+    color: white;
+    text-decoration: none; 
+    margin-right: 20px;     
+    font-weight: bold;
+}
 
+.pannel-ops a:hover {
+    text-decoration: underline; 
+    color: gold; 
+}
+
+.add-first a{
+    color: white;
+    text-decoration: none;
+}
+.add-first a:hover{
+    color: blue;
+    text-decoration:underline;
+}

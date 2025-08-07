@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Today's Deals - Amazon Clone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3e6e6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #232f3e;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .deals-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .deal-card {
+      background-color: white;
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: center;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .deal-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    figcaption {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .price {
+      margin: 10px 0;
+    }
+
+    .price del {
+      color: #888;
+    }
+
+    .price strong {
+      color: #b12704;
+      font-size: 18px;
+    }
+
+    .deal-btn {
+      background-color: #f08804;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .deal-btn:hover {
+      background-color: #c76f00;
+    }
+
+    footer {
+      background-color: #232f3e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Amazon Clone</h1>
+  </header>
+
+  <h1>🔥 Today's Top Deals 🔥</h1>
+
+  <section class="deals-container">
+    <div class="deal-card">
+      <figure>
+        <img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_UY218_.jpg" alt="Noise Headphones">
+        <figcaption>Noise Cancelling Headphones</figcaption>
+      </figure>
+      <p class="price"><del>₹7,999</del> <strong>₹4,999</strong> (38% OFF)</p>
+      <button class="deal-btn">Buy Now</button>
+    </div>
+
+    <div class="deal-card">
+      <figure>
+        <img src="https://images.pexels.com/photos/4917455/pexels-photo-4917455.jpeg?cs=srgb&dl=pexels-curayagjovan-4917455.jpg&fm=jpg" alt="Bluetooth Speaker">
+        <figcaption>JBL Bluetooth Speaker</figcaption>
+      </figure>
+      <p class="price"><del>₹4,999</del> <strong>₹3,299</strong> (34% OFF)</p>
+      <button class="deal-btn">Add to Cart</button>
+    </div>
+
+    <div class="deal-card">
+      <figure>
+        <img src="https://media.istockphoto.com/id/1286099942/photo/close-up-of-hand-touching-smartwatch-with-health-app-on-the-screen-gadget-for-fitness-active.jpg?s=612x612&w=0&k=20&c=zX9Fko_T6qppRO8J8BSYu4DovmLjPFKwi_x6l0GzCq0=" alt="Smartwatch">
+        <figcaption>Smart Fitness Watch</figcaption>
+      </figure>
+      <p class="price"><del>₹3,999</del> <strong>₹2,299</strong> (43% OFF)</p>
+      <button class="deal-btn">Buy Now</button>
+    </div>
+
+    <div class="deal-card">
+      <figure>
+        <img src="https://images.pexels.com/photos/343720/pexels-photo-343720.jpeg?cs=srgb&dl=pexels-asim-razan-343720.jpg&fm=jpg" alt="Sunglasses">
+        <figcaption>Stylish Polarized Sunglasses</figcaption>
+      </figure>
+      <p class="price"><del>₹1,999</del> <strong>₹1,299</strong> (35% OFF)</p>
+      <button class="deal-btn">Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Amazon Clone by <strong>_Shraddha Todkar.</strong></p>
+  </footer>
+
+</body>
+</html>

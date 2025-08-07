@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return or Replace</title>
+    <script>
+    function data() {
+    var reason = document.getElementById("reason").value;
+    var action = document.querySelector('input[name="action"]:checked');
+    var photo = document.getElementById("upload").files.length;
+    var comment = document.getElementById("comment").value;
+
+    if (reason === "" || !action || comment.trim() === "") {
+        alert("Please fill in all required fields (reason, option, and comment.!");
+        return false;
+    }
+
+    alert("Your return/replace request has been submitted successfully!");
+    return true;
+}
+</script>
+
+    <style>
+    body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2022/08/23140219/amazon-refund-without-return-2021.jpeg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-box {
+    background:rgba(0 , 0 , 0 , 0.3);
+    border-radius: 10px;
+    padding: 20px 25px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color:white;
+}
+
+.modal-box h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: white;
+    margin: 5px 0 15px;
+}
+
+label {
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+select, textarea, input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.radio-group label {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.cancel {
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.submit {
+    background-color: #0077b6;
+    color: white;
+}
+.submit:hover{
+    background-color: wheat;
+    color:black;
+}
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <form name="f1" onsubmit="return data()">
+        <div class="modal-box">
+            <h2>Return or Replace Item_🔁..!</h2>
+            <p class="subtitle">We’ll review your request within 48 hours.</p>
+
+            <label for="reason">Select a Reason</label>
+            <select id="reason">
+                <option value="">---- Select a Reason ----</option>
+                <option>Received a damaged product</option>
+                <option>Wrong item delivered</option>
+                <option>Item arrived late</option>
+                <option>Product no longer needed</option>
+                <option>Other</option>
+            </select>
+
+            <label>Choose an Option</label>
+            <div class="radio-group">
+                <label><input type="radio" name="action" value="return" id="n2"> Return for Refund</label>
+                <label><input type="radio" name="action" value="replace" id="n3"> Replace with New Item</label>
+            </div>
+
+            <label for="upload">Upload a Photo (optional)</label>
+            <input type="file" id="upload" accept="image/*">
+
+            <label for="comment">Leave a Comment</label>
+            <textarea id="comment" placeholder="Tell us more about the issue..."></textarea>
+
+            <div class="btn-group">
+                <button class="btn cancel">Cancel</button>
+                <button class="btn submit">Submit</button>
+            </div>
+          </div>
+        </form>
+    </div>
+</body>
+</html>

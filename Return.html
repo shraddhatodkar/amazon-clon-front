@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Return an Item</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #bfd3d9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #232f3e;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .returns-orders {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+
+    .returns-orders:hover {
+      background-color: #37475a;
+      border-color: #72869d;
+    }
+
+    .return-form-container {
+      display: none;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 30px;
+      /* background-color: white; */
+      background: rgba(0 , 0 , 0 , 0.3);
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .btn-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      background-color: #0077b6;
+      color: white;
+    }
+
+    .submit-btn:hover {
+      background-color: #005f8a;
+    }
+
+    .cancel-btn {
+      background-color: #ccc;
+    }
+
+    .message {
+      color: green;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#" class="returns-orders" onclick="showReturnForm()">Returns</a>
+</div>
+
+<div class="return-form-container" id="returnForm">
+  <h2>🔥Return an Item..</h2>
+  <form onsubmit="return submitReturnForm()">
+    <label for="orderId">Order ID</label>
+    <input type="text" id="orderId" required placeholder="Enter your order ID">
+
+    <label for="itemName">Item Name</label>
+    <input type="text" id="itemName" required placeholder="Enter the item name">
+
+    <label for="reason">Reason for Return</label>
+    <select id="reason" required>
+      <option value="">-- Select Reason --</option>
+      <option>Damaged Item</option>
+      <option>Wrong Item Delivered</option>
+      <option>Not As Described</option>
+      <option>I don't like item from bottom of my heart</option>
+      <option>Other</option>
+    </select>
+
+    <label for="comments">Additional Comments</label>
+    <textarea id="comments" rows="4" placeholder="Optional comments..."></textarea>
+
+    <div class="btn-group">
+      <button type="reset" class="cancel-btn">Cancel</button>
+      <button type="submit" class="submit-btn">Submit Return</button>
+    </div>
+  </form>
+  <div class="message" id="msg"></div>
+</div>
+
+<script>
+  function showReturnForm() {
+    document.getElementById("returnForm").style.display = "block";
+    window.scrollTo({ top: document.getElementById("returnForm").offsetTop, behavior: 'smooth' });
+  }
+
+  function submitReturnForm() {
+    const orderId = document.getElementById("orderId").value;
+    const itemName = document.getElementById("itemName").value;
+    const reason = document.getElementById("reason").value;
+
+    if (!orderId || !itemName || !reason) {
+      alert("Please fill all required fields.");
+      return false;
+    }
+    alert("Your return request has been submitted successfully!");
+    return false; 
+  }
+</script>
+
+</body>
+</html>

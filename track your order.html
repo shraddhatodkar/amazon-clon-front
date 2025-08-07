@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Order</title>
+  <script>
+    function data(){
+      var fname = document.getElementById("n1").value;
+      var lname = document.getElementById("n2").value;
+      var contact = document.getElementById("n3").value;
+      var product = document.getElementById("n4").value;
+      var date = document.getElementById("n5").value;
+
+      if(fname == "" || lname == "" || contact == "" || product == "" || date == "")
+    {
+      alert("Please fill out below fields.!");
+      return false;
+    }
+     
+    if(contact.length<10 || contact.length>10)
+    {
+      alert("Plese enter the valid Contact no which have 10 Digits Only!");
+      return false;
+    }
+    return true;
+}  
+    </script>
+  <style>
+    body {
+      background-image: url("https://www.shutterstock.com/image-vector/fast-delivery-service-app-on-260nw-1409325194.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 30px 40px;
+      width: 400px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(35, 43, 104);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(35, 43, 104);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: wheat;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <form name="f1" onsubmit="return data()">
+    <h1>Track Order Form</h1>
+
+    <div class="form-group">
+      <label>Customer First Name:</label>
+      <input type="text" name="cfname" placeholder="Cust First name" id="n1">
+    </div>
+
+    <div class="form-group">
+      <label>Customer Last Name:</label>
+      <input type="text" name="clname" placeholder="Cust Last name" id="n2">
+    </div>
+
+    <div class="form-group">
+      <label>Customer Contact No:</label>
+      <input type="number" name="custcon_no" placeholder="Cust Contact NO" id="n3">
+    </div>
+
+    <div class="form-group">
+      <label>Type Of Product:</label>
+      <input type="text" name="type_product" placeholder="Type Of Product" id="n4">
+    </div>
+
+    <div class="form-group">
+      <label>Order Date:</label>
+      <input type="date" name="order" id="n5">
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</body>
+</html>

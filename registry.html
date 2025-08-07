@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registry</title>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+
+      const target = document.getElementById(sectionId);
+      if (target) {
+        target.classList.add('active');
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #bfd3d9;
+    }
+
+    .navbar {
+      background: #222;
+      padding: 10px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+      color: skyblue;
+    }
+
+    img {
+      background-size: auto;
+      width: 500px;
+      height: 300px;
+      position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+      border-top: 1px solid #ccc;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    p {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+
+    img{
+      animation-name:lmn;
+      animation-duration:5s;
+      margin-left:100%;
+    }
+    @keyframes lmn{
+      from{
+        margin-right: 100%;
+      }
+      to{
+        margin-left: 0%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Navbar (No href to /Home) -->
+  <nav class="navbar">
+    <a href="#" onclick="showSection('Home'); return false;">Home</a>
+    <a href="#" onclick="showSection('orders'); return false;">Orders</a>
+    <a href="#" onclick="showSection('gift'); return false;">Gift Ideas</a>
+    <a href="#" onclick="showSection('cart'); return false;">Cart</a>
+    <!-- <a href="#" onclick="showSection('account'); return false;">Account</a> -->
+  </nav>
+
+  <!-- ✅ Sections (Only one shown at a time) -->
+  <div class="content">
+    <section id="home" class="section active">
+      <h2>Home</h2>
+      <p>Welcome to the <strong>🔥Home section.</strong>Discover a personalized shopping experience tailored just for
+        you. Whether you're creating a wishlist,
+        tracking your orders, or browsing for gift ideas, everything you need is right here. Stay updated with the
+        latest offers and
+        manage your account—all in one place. Let’s make your shopping easier, faster, and more enjoyable.Hello and
+        welcome! Your registry
+        is your one-stop space for everything you love. From tracking orders to discovering perfect gifts, we’ve made it
+        simple and fun.
+        Start exploring and make your shopping journey smooth and exciting! This registry portal provides you with
+        centralized access to order
+        history, personalized gift recommendations, and account management tools. Navigate seamlessly through your
+        shopping experience with all
+        key features integrated in a single location.</p>
+      <img
+        src="https://visualhierarchy.co/wp-content/uploads/2024/03/evolution-of-amazon-homepage-featured-image-new.webp">
+      </p>
+      </p>
+    </section>
+    <section id="orders" class="section">
+      <h2>Orders</h2>
+      <p>Track, manage, and view all your <strong>🔥orders </strong>in one place. Whether you're checking the delivery
+        status of your latest purchase, reordering a favorite
+        item, or reviewing past purchases, the Orders section gives you full control. Stay updated with real-time
+        tracking, cancel or return products easily, and get detailed receipts and support for each order.</p>
+      <img
+       src="https://www.channelengine.com/hubfs/Blogs/2024-04/Amazon%20order%20management.jpg">
+    </section>
+    <section id="gift" class="section">
+      <h2>Gift Ideas</h2>
+      <p>Make every occasion special with the perfect <strong>🔥gift Ideas. </strong> Whether it’s birthdays, anniversaries, or festivals, explore
+        a wide range of
+        gift ideas and gift cards for your loved ones.
+        Choose from personalized gifts, digital gift cards, and surprise options that suit every taste and budget.
+        Gifting made easy
+        and thoughtful – all in one place.</p>
+        <img
+         src="https://assets.aboutamazon.com/dims4/default/d6c3c69/2147483647/strip/false/crop/1280x720+0+0/resize/1200x675!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2Ff7%2Fd2%2F4ab528e1471f98dc1e1f301cf914%2Foption-1.jpg">
+    </section>
+    <section id="cart" class="section">
+      <h2>Cart</h2>
+      <p>Your <strong>🔥Cart</strong> keeps everything you're planning to buy in one place. Review items, check prices, and make changes before 
+        proceeding to checkout. Whether you're still deciding or ready to place the order, your cart gives you full control 
+        over your shopping. Save items for later or remove them anytime — it's your personal shopping list, 
+        always just a click away.</p>
+        <img
+         src="https://www.shutterstock.com/image-vector/3d-vector-shopping-trolley-parcel-600nw-2181843267.jpg">
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

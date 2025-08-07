@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invoice</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: wheat;
+}
+
+.invoice-box {
+  background: #fff;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: #0077b6;
+}
+
+.header button {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.company-info,
+.invoice-details {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.invoice-table thead {
+  background: #0077b6;
+  color: white;
+}
+
+.invoice-table tfoot td {
+  font-weight: bold;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.note {
+  margin-top: 30px;
+  font-style: italic;
+  color: #555;
+  text-align: center;
+}
+
+/* Print-friendly */
+@media print {
+  body {
+    background: white;
+  }
+
+  .header button {
+    display: none;
+  }
+
+  .invoice-box {
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="invoice-box">
+    <div class="header">
+      <h1>INVOICE</h1>
+      <button onclick="window.print()">Print Invoice</button>
+    </div>
+
+    <div class="company-info">
+      <p><strong>My Company</strong></p>
+      <p>123 Street Name, City</p>
+      <p>Email: support@mycompany.com</p>
+      <p>Phone: +91-1234567890</p>
+    </div>
+
+    <div class="invoice-details">
+      <p><strong>Invoice #: </strong> INV-00123</p>
+      <p><strong>Date: </strong> 02-Aug-2025</p>
+      <p><strong>Billed To: </strong> Shraddha Todkar</p>
+    </div>
+
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Unit Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Product A</td>
+          <td>2</td>
+          <td>₹500</td>
+          <td>₹1000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Product B</td>
+          <td>1</td>
+          <td>₹700</td>
+          <td>₹700</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="text-right"><strong>Subtotal:</strong></td>
+          <td>₹1700</td>
+        </tr>
+        <tr>
+          <td colspan="4" class="text-right"><strong>GST (18%):</strong></td>
+          <td>₹306</td>
+        </tr>
+        <tr>
+          <td colspan="4" class="text-right"><strong>Total:</strong></td>
+          <td><strong>₹2006</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p class="note">Thank you for your purchase!</p>
+  </div>
+</body>
+</html>

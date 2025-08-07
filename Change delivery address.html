@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Change Delivery Address</title>
+  <script>
+    function data() {
+      var a = document.getElementById("name").value.trim();
+      var b = document.getElementById("address").value.trim();
+      var c = document.getElementById("city").value.trim();
+      var d = document.getElementById("pincode").value.trim();
+      var e = document.getElementById("phone").value.trim();
+
+      if (a === "" || b === "" || c === "" || d === "" || e === "") 
+      {
+        alert("Please fill in all required fields: name, address, city, pincode, and phone.");
+        return false;
+      }
+      
+      alert("Your delivery address has been updated successfully!");
+      return false; 
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-image: url("https://www.dhl.com/discover/content/dam/malaysia/ship-with-dhl/on-demand-delivery/change-address/991x558-odd-shipment-modification-alternate-address.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-box {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      margin-left: 400px;
+    }
+
+    .form-box h2 {
+      margin-top: 0;
+      color: #0077b6;
+    }
+
+    .form-box p {
+      font-size: 14px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .btn-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cancel {
+      background-color: white;
+      border: 1px solid #ccc;
+    }
+
+    .submit {
+      background-color: #0077b6;
+      color: white;
+    }
+
+    .submit:hover {
+      background-color: wheat;
+      color: black;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-size: 14px;
+      color: green;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <form id="addressForm" onsubmit="return data()">
+      <h2>Change Delivery Address</h2>
+      <p>Please enter your new delivery address below.</p>
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required placeholder="Your Name" />
+
+      <label for="address">Address Line</label>
+      <input type="text" id="address" required placeholder="House number, Street" />
+
+      <label for="city">City</label>
+      <input type="text" id="city" required />
+
+      <label for="pincode">PIN Code</label>
+      <input type="text" id="pincode" required pattern="\d{6}" maxlength="6" />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required pattern="[0-9]{10}" maxlength="10" />
+
+      <div class="btn-group">
+        <button type="reset" class="cancel">Cancel</button>
+        <button type="submit" class="submit">Save Address</button>
+      </div>
+
+      <div id="message"></div>
+    </form>
+  </div>
+</body>
+</html>

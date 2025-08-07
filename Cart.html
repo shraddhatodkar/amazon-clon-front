@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #bfd3d9;
+    }
+
+    nav h1{
+        text-align: center;
+        align-items: center;
+        display: flex;
+    }
+    nav {
+      background-color: #085c89;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .cart {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .cart-dropdown {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background: white;
+      color: black;
+      width: 250px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
+    }
+
+    .cart-dropdown ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .cart-dropdown ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-dropdown ul li input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .cart-dropdown ul li button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .cart-dropdown .actions {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .cart-dropdown .actions button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cart-count {
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 50%;
+      position: absolute;
+      top: -5px;
+      right: -10px;
+    }
+
+    .product-list {
+      padding: 20px;
+    }
+
+    .product {
+      
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 40px;
+    margin-bottom: 10px;
+    background-color: #d1e7e0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+    
+
+    .product button {
+      padding: 6px 12px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h1>🔥My Electronics Store..!🔥</h1>
+  <div class="cart" onclick="toggleCart()">
+    🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    <div class="cart-dropdown" id="cartDropdown">
+      <ul id="cartItems"></ul>
+      <div class="actions">
+        <button onclick="removeSelected()">Remove Selected</button>
+        <button onclick="clearCart()">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="product">
+    <span>HP Pavilion Laptop</span>
+    <button onclick="addToCart('HP Pavilion Laptop')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>Samsung Galaxy S23</span>
+    <button onclick="addToCart('Samsung Galaxy S23')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>Apple Watch Series 9</span>
+    <button onclick="addToCart('Apple Watch Series 9')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>Sony Noise Headphones</span>
+    <button onclick="addToCart('Sony Noise Headphones')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>JBL Bluetooth Speaker</span>
+    <button onclick="addToCart('JBL Bluetooth Speaker')">Add to Cart</button>
+  </div>
+  </div>
+  <div class="product">
+    <span>Canon EOS DSLR Camera</span>
+    <button onclick="addToCart('Canon EOS DSLR Camera')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>iPad Air 5th Gen</span>
+    <button onclick="addToCart('iPad Air 5th Gen')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>LG 55” 4K Smart TV</span>
+    <button onclick="addToCart('LG 55” 4K Smart TV')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>PlayStation 5 Console</span>
+    <button onclick="addToCart('PlayStation 5 Console')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>TP-Link Wi-Fi 6 Router</span>
+    <button onclick="addToCart('TP-Link Wi-Fi 6 Router')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>DJI Mini 3 Drone</span>
+    <button onclick="addToCart('DJI Mini 3 Drone')">Add to Cart</button>
+  </div>
+  <div class="product">
+    <span>Samsung Microwave Oven</span>
+    <button onclick="addToCart('Samsung Microwave Oven')">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+  let cartItems = [];
+
+  function toggleCart() {
+    document.getElementById('cartDropdown').style.display =
+      document.getElementById('cartDropdown').style.display === 'block' ? 'none' : 'block';
+  }
+
+  function addToCart(item) {
+    cartItems.push(item);
+    updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+    const cartList = document.getElementById('cartItems');
+    cartList.innerHTML = '';
+    cartItems.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <input type="checkbox" id="select${index}" />
+        <span>${item}</span>
+        <button onclick="deleteItem(${index})">Delete</button>
+      `;
+      cartList.appendChild(li);
+    });
+    document.getElementById('cartCount').innerText = cartItems.length;
+  }
+
+  function deleteItem(index) {
+    cartItems.splice(index, 1);
+    updateCartDisplay();
+  }
+
+  function clearCart() {
+    cartItems = [];
+    updateCartDisplay();
+  }
+
+  function removeSelected() {
+    const list = document.querySelectorAll('#cartItems input[type="checkbox"]');
+    let newCart = [];
+    list.forEach((checkbox, index) => {
+      if (!checkbox.checked) {
+        newCart.push(cartItems[index]);
+      }
+    });
+    cartItems = newCart;
+    updateCartDisplay();
+  }
+</script>
+
+</body>
+</html>
